@@ -1,1 +1,98 @@
-Hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Menu with Background Image</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent */
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header img {
+            height: 50px;
+            margin-left: 20px;
+        }
+
+        .menu {
+            margin-right: 20px;
+        }
+
+        .menu a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .menu a:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        .content {
+            height: 100vh;
+            background-image: url('your-background-image.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .content h1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .content button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="your-logo.png" alt="Logo">
+        <div class="menu">
+            <a href="#products">Products</a>
+            <a href="#shop">Shop</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Developing Riveting Experiences</h1>
+        <button>Explore</button>
+    </div>
+
+</body>
+</html>
+
+
