@@ -95,23 +95,34 @@
             color: #ccc;
         }
 
-        .content {
-            padding-top: 60px; /* Adjusted padding to avoid overlap with fixed header */
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .content-section {
+            position: relative;
+            overflow: hidden;
             text-align: center;
             color: white;
+            margin: 20px 0; /* Add margin for spacing between sections */
         }
 
-        .content img {
-            width: auto;
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Background image behind content */
+        }
+
+        .background-image img {
+            width: 100%;
             height: auto;
-            max-width: 100%;
-            max-height: 720px; /* Set maximum height to 720px */
-            object-fit: contain; /* Ensure images are not distorted */
+            max-height: 720px; /* Adjust as needed */
+            object-fit: cover;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2; /* Content above background image */
+            padding: 20px;
         }
 
         .content h1 {
@@ -232,59 +243,87 @@
         </div>
     </div>
 
-    <div class="content">
-        <img src="images/bgimages/RivetHomebg.png" alt="Home Background Image">
-        <h1 style="color: white">Developing Riveting Experiences</h1>
-        <button>Explore</button>
-    </div>
-
-    <div class="content">
-        <img src="images/bgimages/SOTSbg.png" alt="SOTS Background Image">
-        <h1 style="color: #4B0082;">Shadows On The Sands</h1>
-        <p>Embark on a journey through uncharted territories, where mystery and adventure await.</p>
-        <button>Play Now</button>
-    </div>
-
-    <div class="content">
-        <img src="images/bgimages/purplebg.png" alt="Software Background Image">
-        <h1 style="color: white;">Software</h1>
-        <p>Explore our range of software products designed to meet your needs.</p>
-        <button onclick="window.location.href='software.html'">Explore</button>
-    </div>
-
-    <div class="content">
-        <img src="images/bgimages/blackbg.png" alt="Black bg">
-        <h1 style="color: #4B0082;">Games</h1>
-        <p>Making immersive experiences</p>
-        <button onclick="window.location.href='games.html'">Explore</button>
-    </div>
-
-    <div class="content">
-        <img src="images/bgimages/purplebg.png" alt="News Background Image">
-        <h1 style="color: white;">News</h1>
-        <p>Stay updated with the latest blog posts from our GitHub site.</p>
-        <div id="news-grid" class="news-grid">
-            <!-- Blog posts will be inserted here dynamically -->
+    <div class="content-section">
+        <div class="background-image">
+            <img src="images/bgimages/RivetHomebg.png" alt="Home Background Image">
+        </div>
+        <div class="content">
+            <h1 style="color: white">Developing Riveting Experiences</h1>
+            <button>Explore</button>
         </div>
     </div>
 
-    <div class="content">
-        <img src="images/bgimages/blackbg.png" alt="Blog Background Image">
-        <h1 style="color: #4B0082;">Blog</h1>
-        <p>Discover behind-the-scenes insights and snapshots from all aspects of the development process.</p>
-        <button>Discover</button>
+    <div class="content-section">
+        <div class="background-image">
+            <img src="images/bgimages/SOTSbg.png" alt="SOTS Background Image">
+        </div>
+        <div class="content">
+            <h1 style="color: #4B0082;">Shadows On The Sands</h1>
+            <p>Embark on a journey through uncharted territories, where mystery and adventure await.</p>
+            <button>Play Now</button>
+        </div>
     </div>
 
-    <div class="content">
-        <img src="images/bgimages/purplebg.png" alt="Contact Background Image">
-        <h1 style="color: white;">Contact</h1>
-        <div class="contact-form">
-            <form action="submit_form.php" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+    <div class="content-section">
+        <div class="background-image">
+            <img src="images/bgimages/purplebg.png" alt="Software Background Image">
+        </div>
+        <div class="content">
+            <h1 style="color: white;">Software</h1>
+            <p>Explore our range of software products designed to meet your needs.</p>
+            <button onclick="window.location.href='software.html'">Explore</button>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="background-image">
+            <img src="images/bgimages/blackbg.png" alt="Games Background Image">
+        </div>
+        <div class="content">
+            <h1 style="color: #4B0082;">Games</h1>
+            <p>Making immersive experiences</p>
+            <button onclick="window.location.href='games.html'">Explore</button>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="background-image">
+            <img src="images/bgimages/purplebg.png" alt="News Background Image">
+        </div>
+        <div class="content">
+            <h1 style="color: white;">News</h1>
+            <p>Stay updated with the latest blog posts from our GitHub site.</p>
+            <div id="news-grid" class="news-grid">
+                <!-- Blog posts will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="background-image">
+            <img src="images/bgimages/blackbg.png" alt="Blog Background Image">
+        </div>
+        <div class="content">
+            <h1 style="color: #4B0082;">Blog</h1>
+            <p>Discover behind-the-scenes insights and snapshots from all aspects of the development process.</p>
+            <button>Discover</button>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="background-image">
+            <img src="images/bgimages/purplebg.png" alt="Contact Background Image">
+        </div>
+        <div class="content">
+            <h1 style="color: white;">Contact</h1>
+            <div class="contact-form">
+                <form action="submit_form.php" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
         </div>
     </div>
 
