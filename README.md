@@ -1,2 +1,2 @@
 # rivet.github.io
-Software &amp; Game Development
+Software & Game Development Lab
