@@ -10,9 +10,7 @@
         body {
             margin: 0;
             font-family: Lato, sans-serif;
-            height: 100vh;
             overflow-x: hidden;
-            position: relative;
         }
 
         .header {
@@ -100,46 +98,51 @@
             overflow: hidden;
             text-align: center;
             color: white;
-            margin: 20px 0; /* Add margin for spacing between sections */
+            margin: 0;
+            padding: 0;
         }
 
-        .background-image {
+        .content-section .background-image {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1; /* Background image behind content */
+            z-index: 1;
         }
 
-        .background-image img {
+        .content-section .background-image img {
             width: 100%;
-            height: auto;
-            max-height: 720px; /* Adjust as needed */
+            height: 100%;
             object-fit: cover;
         }
 
-        .content {
+        .content-section .content {
             position: relative;
-            z-index: 2; /* Content above background image */
+            z-index: 2;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px; /* Ensure the section is tall enough */
         }
 
-        .content h1 {
+        .content-section .content h1 {
             font-family: Lato, sans-serif;
             font-weight: 700;
             font-size: 36px;
             margin: 0;
         }
 
-        .content p {
+        .content-section .content p {
             margin-top: 10px;
             font-size: 18px;
             max-width: 800px;
             font-family: Lato, sans-serif;
         }
 
-        .content button {
+        .content-section .content button {
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 16px;
@@ -156,8 +159,8 @@
         }
 
         .contact-form input, .contact-form textarea {
-            width: 80%;
-            max-width: 500px;
+            width: 300%;
+            max-width: 600px;
             margin-bottom: 10px;
             padding: 10px;
             font-size: 16px;
@@ -234,53 +237,43 @@
                 </div>
             </div>
             <a href="#shop">Shop</a>
+            <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </div>
         <div class="social-icons">
-            <a href="https://instagram.com/yourprofile" target="_blank" class="fab fa-instagram"></a>
-            <a href="https://twitter.com/yourprofile" target="_blank" class="fab fa-twitter"></a>
-            <a href="https://youtube.com/yourchannel" target="_blank" class="fab fa-youtube"></a>
+            <a href="https://instagram.com/rivetlxbs" target="_blank" class="fab fa-instagram"></a>
+            <a href="https://x.com/RivetDevv" target="_blank" class="fab fa-twitter"></a>
+            <a href="https://www.youtube.com/@riahalzz" target="_blank" class="fab fa-youtube"></a>
         </div>
     </div>
 
-    <div class="content-section">
+    <div class="content-section first-section">
         <div class="background-image">
-            <img src="images/bgimages/RivetHomebg.png" alt="Home Background Image">
+            <img src="images/bgimages/RivetHomebg.png" alt="Home bg">
         </div>
         <div class="content">
             <h1 style="color: white">Developing Riveting Experiences</h1>
-            <button>Explore</button>
+            <button>Explore Products</button>
         </div>
     </div>
 
     <div class="content-section">
         <div class="background-image">
-            <img src="images/bgimages/SOTSbg.png" alt="SOTS Background Image">
-        </div>
-        <div class="content">
-            <h1 style="color: #4B0082;">Shadows On The Sands</h1>
-            <p>Embark on a journey through uncharted territories, where mystery and adventure await.</p>
-            <button>Play Now</button>
-        </div>
-    </div>
-
-    <div class="content-section">
-        <div class="background-image">
-            <img src="images/bgimages/purplebg.png" alt="Software Background Image">
+            <img src="images/bgimages/blackbg.png" alt="Black bg">
         </div>
         <div class="content">
             <h1 style="color: white;">Software</h1>
-            <p>Explore our range of software products designed to meet your needs.</p>
+            <p>A range of software products</p>
             <button onclick="window.location.href='software.html'">Explore</button>
         </div>
     </div>
 
     <div class="content-section">
         <div class="background-image">
-            <img src="images/bgimages/blackbg.png" alt="Games Background Image">
+            <img src="images/bgimages/purplebg.png" alt="Purple bg">
         </div>
         <div class="content">
-            <h1 style="color: #4B0082;">Games</h1>
+            <h1 style="color: white;">Games</h1>
             <p>Making immersive experiences</p>
             <button onclick="window.location.href='games.html'">Explore</button>
         </div>
@@ -288,11 +281,10 @@
 
     <div class="content-section">
         <div class="background-image">
-            <img src="images/bgimages/purplebg.png" alt="News Background Image">
+            <img src="images/bgimages/blackbg.png" alt="Black bg">
         </div>
         <div class="content">
             <h1 style="color: white;">News</h1>
-            <p>Stay updated with the latest blog posts from our GitHub site.</p>
             <div id="news-grid" class="news-grid">
                 <!-- Blog posts will be inserted here dynamically -->
             </div>
@@ -301,53 +293,58 @@
 
     <div class="content-section">
         <div class="background-image">
-            <img src="images/bgimages/blackbg.png" alt="Blog Background Image">
+            <img src="images/bgimages/purplebg.png" alt="Purple bg">
         </div>
         <div class="content">
-            <h1 style="color: #4B0082;">Blog</h1>
-            <p>Discover behind-the-scenes insights and snapshots from all aspects of the development process.</p>
+            <h1 style="color: white;">Blog</h1>
+            <p>Discover behind-the-scenes insights and snapshots of every aspect of the development process.</p>
             <button>Discover</button>
         </div>
     </div>
 
-    <div class="content-section">
+    <div class="content-section" id="contact">
         <div class="background-image">
-            <img src="images/bgimages/purplebg.png" alt="Contact Background Image">
+            <img src="images/bgimages/blackbg.png" alt="Black bg">
         </div>
         <div class="content">
             <h1 style="color: white;">Contact</h1>
             <div class="contact-form">
-                <form action="submit_form.php" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
             </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const repoUrl = 'https://rivet.github.io/blog/';
+        async function fetchBlogPosts() {
+            const response = await fetch('https://rivet.github.io/blog/');
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const posts = doc.querySelectorAll('.post-preview');
             const newsGrid = document.getElementById('news-grid');
 
-            fetch(repoUrl + 'index.json')
-                .then(response => response.json())
-                .then(data => {
-                    data.posts.forEach(post => {
-                        const postItem = document.createElement('div');
-                        postItem.className = 'news-item';
-                        postItem.innerHTML = `
-                            <h3>${post.title}</h3>
-                            <p>${post.excerpt}</p>
-                            <a href="${post.url}" class="button">Read More</a>
-                        `;
-                        newsGrid.appendChild(postItem);
-                    });
-                })
-                .catch(error => console.error('Error fetching blog posts:', error));
-        });
+            posts.forEach(post => {
+                const title = post.querySelector('h2').textContent;
+                const excerpt = post.querySelector('p').textContent;
+                const link = post.querySelector('a').href;
+
+                const newsItem = document.createElement('div');
+                newsItem.className = 'news-item';
+                newsItem.innerHTML = `
+                    <h3>${title}</h3>
+                    <p>${excerpt}</p>
+                    <a href="${link}" class="button">Read More</a>
+                `;
+                newsGrid.appendChild(newsItem);
+            });
+        }
+
+        fetchBlogPosts();
     </script>
+
 </body>
 </html>
+
