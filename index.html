@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Lato, sans-serif;
             height: 100vh;
             overflow-x: hidden;
             position: relative;
@@ -106,30 +107,25 @@
         }
 
         .content img {
-            width: 1280px; /* Set width to 1280px */
-            height: 720px; /* Set height to 720px */
-            object-fit: cover; /* Ensure images are not distorted */
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 720px; /* Set maximum height to 720px */
+            object-fit: contain; /* Ensure images are not distorted */
         }
 
         .content h1 {
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
+            font-family: Lato, sans-serif;
+            font-weight: 700;
             font-size: 36px;
             margin: 0;
-        }
-
-        .content h1.white {
-            color: white; /* White color for specific headings */
-        }
-
-        .content h1.dark-purple {
-            color: #4B0082; /* Dark purple color */
         }
 
         .content p {
             margin-top: 10px;
             font-size: 18px;
             max-width: 800px;
+            font-family: Lato, sans-serif;
         }
 
         .content button {
@@ -138,6 +134,7 @@
             font-size: 16px;
             border: none;
             cursor: pointer;
+            font-family: Lato, sans-serif;
         }
 
         .contact-form {
@@ -153,6 +150,7 @@
             margin-bottom: 10px;
             padding: 10px;
             font-size: 16px;
+            font-family: Lato, sans-serif;
         }
 
         .contact-form button {
@@ -164,6 +162,7 @@
             color: white;
             border: none;
             cursor: pointer;
+            font-family: Lato, sans-serif;
         }
 
         .news-grid {
@@ -186,11 +185,13 @@
         .news-item h3 {
             margin: 10px 0;
             font-size: 20px;
+            font-family: Lato, sans-serif;
         }
 
         .news-item p {
             font-size: 14px;
             color: #666;
+            font-family: Lato, sans-serif;
         }
 
         .news-item .button {
@@ -201,6 +202,7 @@
             color: white;
             text-decoration: none;
             border-radius: 4px;
+            font-family: Lato, sans-serif;
         }
 
         .news-item .button:hover {
@@ -232,49 +234,50 @@
 
     <div class="content">
         <img src="images/bgimages/RivetHomebg.png" alt="Home Background Image">
-        <h1 class="white">Developing Riveting Experiences</h1>
+        <h1 style="color: white">Developing Riveting Experiences</h1>
         <button>Explore</button>
     </div>
 
     <div class="content">
-        <img src="images/bgimages/AnotherImage.png" alt="SOTS Background Image">
-        <h1 class="dark-purple">Shadows On The Sands</h1>
+        <img src="images/bgimages/SOTSbg.png" alt="SOTS Background Image">
+        <h1 style="color: #4B0082;">Shadows On The Sands</h1>
         <p>Embark on a journey through uncharted territories, where mystery and adventure await.</p>
         <button>Play Now</button>
     </div>
 
     <div class="content">
-        <img src="images/bgimages/Image3.png" alt="Software Background Image">
-        <h1 class="white">Software</h1>
+        <img src="images/bgimages/Purplebg.png" alt="Software Background Image">
+        <h1 style="color: white;">Software</h1>
         <p>Explore our range of software products designed to meet your needs.</p>
         <button onclick="window.location.href='software.html'">Explore</button>
     </div>
 
     <div class="content">
-        <img src="images/bgimages/Image4.png" alt="Games Background Image">
-        <h1 class="dark-purple">Games</h1>
+        <img src="images/bgimages/blackbg.png" alt="Black bg">
+        <h1 style="color: #4B0082;">Games</h1>
         <p>Making immersive experiences</p>
         <button onclick="window.location.href='games.html'">Explore</button>
     </div>
 
     <div class="content">
-        <img src="images/bgimages/Image5.png" alt="News Background Image">
-        <h1 class="dark-purple">News</h1>
+        <img src="images/bgimages/Purplebg.png" alt="News Background Image">
+        <h1 style="color: white;">News</h1>
+        <p>Stay updated with the latest blog posts from our GitHub site.</p>
         <div id="news-grid" class="news-grid">
-            <!-- News items will be dynamically inserted here -->
+            <!-- Blog posts will be inserted here dynamically -->
         </div>
     </div>
 
     <div class="content">
-        <img src="images/bgimages/Image6.png" alt="Blog Background Image">
-        <h1 class="dark-purple">Blog</h1>
+        <img src="images/bgimages/blackbg.png" alt="Blog Background Image">
+        <h1 style="color: #4B0082;">Blog</h1>
         <p>Discover behind-the-scenes insights and snapshots from all aspects of the development process.</p>
         <button>Discover</button>
     </div>
 
     <div class="content">
-        <img src="images/bgimages/Image6.png" alt="Contact Background Image">
-        <h1 class="dark-purple">Contact</h1>
+        <img src="images/bgimages/Purplebg.png" alt="Contact Background Image">
+        <h1 style="color: white;">Contact</h1>
         <div class="contact-form">
             <form action="submit_form.php" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -286,26 +289,22 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const repoUrl = 'https://api.github.com/repos/rivet/rivet.github.io/contents/blog';
+        document.addEventListener("DOMContentLoaded", function() {
+            const repoUrl = 'https://rivet.github.io/blog/';
             const newsGrid = document.getElementById('news-grid');
 
-            fetch(repoUrl)
+            fetch(repoUrl + 'index.json')
                 .then(response => response.json())
                 .then(data => {
-                    data.forEach(post => {
-                        if (post.type === 'file') {
-                            const postTitle = post.name.replace('.md', '');
-                            const postUrl = `https://rivet.github.io/blog/${post.name}`;
-                            const newsItem = document.createElement('div');
-                            newsItem.className = 'news-item';
-                            newsItem.innerHTML = `
-                                <h3>${postTitle}</h3>
-                                <p>Read the latest blog post to stay updated with our latest developments.</p>
-                                <a href="${postUrl}" class="button">Read More</a>
-                            `;
-                            newsGrid.appendChild(newsItem);
-                        }
+                    data.posts.forEach(post => {
+                        const postItem = document.createElement('div');
+                        postItem.className = 'news-item';
+                        postItem.innerHTML = `
+                            <h3>${post.title}</h3>
+                            <p>${post.excerpt}</p>
+                            <a href="${post.url}" class="button">Read More</a>
+                        `;
+                        newsGrid.appendChild(postItem);
                     });
                 })
                 .catch(error => console.error('Error fetching blog posts:', error));
