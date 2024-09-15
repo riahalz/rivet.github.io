@@ -1,2 +1,2 @@
-# rivet.github.io
-Software & Game Development Lab
+# riyahal.github.io
+Software & Game Development
